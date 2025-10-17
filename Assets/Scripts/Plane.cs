@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Plane : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class Plane : MonoBehaviour
     public float delayTime;
     //Particles
     public ParticleSystem muzzleFlashL, muzzleFlashR;
+    //TMP
+    public TextMeshProUGUI clipUi;
 
     void Update(){
         Shoot();
@@ -51,6 +54,7 @@ public class Plane : MonoBehaviour
     }
 
     void Clip(){
+        clipUi.text = clip.ToString();
         if(clip <= 0){
             clipWaitTime += Time.deltaTime;
             if(clipWaitTime > clipReloadTime){

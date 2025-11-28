@@ -65,4 +65,8 @@ public class Plane : MonoBehaviour
         
     }
 
+    void OnCollisionEnter(Collision col){
+        Debug.Log("Hit!!!!");
+    }
+
 }
